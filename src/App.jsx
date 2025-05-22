@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 
 const data = [
   '- 123\n',
-  '- 123\n',
   '| 参数 | 说明 | 类型 | 默认值 |\n  | - | - | - | - |\n  | type | [baidu](https://www.baidu.com) | number | 1 |\n  ',
   '- asd\n  - sdf  \n',
 
@@ -21,20 +20,16 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 function App() {
   const [text, setText] = useState('')
   useEffect(() => {
-    // setText(data)
-    // return
-
-    
     async function run() {
       let i = 0
       while (i < data.length) {
-        setText((prev) => prev + data[i])
+        const s = data[i]
+        setText((prev) => prev + s)
         i++
         await sleep(10)
       }
     }
     run()
-
   }, [])
 
   const content = useMarkdown(text)
