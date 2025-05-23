@@ -1,16 +1,10 @@
-import { useEffect } from 'react'
-import './IconText.css'
 import { useState } from 'react'
+import './index.css'
 
 function IconText(props) {
-  console.log('>>>IconText', props)
   const { icon, title, children } = props
 
   const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    console.log('>>>IconText useEffect')
-  }, [])
 
   return (
     <div className='icon-text'>

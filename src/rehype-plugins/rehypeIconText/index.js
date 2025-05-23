@@ -1,1 +1,1 @@
-export { default as IconText } from './components/IconText'
+export { default as IconText } from './components'
