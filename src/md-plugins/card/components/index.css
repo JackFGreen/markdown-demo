@@ -1,7 +1,16 @@
 .card {
   border-radius: 16px;
+  overflow-y: hidden;
 }
 
-.card:hover {
+.card .card-header {
   background: #ccc;
+}
+
+.card .card-body {
+  background: #eee;
+}
+
+.card ul {
+  margin: 0;
 }
