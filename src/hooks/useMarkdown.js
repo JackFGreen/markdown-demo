@@ -10,7 +10,7 @@ import remarkRehype from 'remark-rehype'
 import rehypeRaw from 'rehype-raw'
 import rehypeStringify from 'rehype-stringify'
 
-import { Card, IconText, rehypeCard, remarkCard } from '../rehype-plugins'
+import { remarkPlugins, Card, IconText } from '../md-plugins'
 
 function useMarkdown(text) {
   const [content, setContent] = useState(createElement(Fragment))
@@ -52,13 +52,14 @@ function useMarkdown(text) {
           .use(remarkParse)
           .use(remarkDirective) // 启用指令语法支持
           .use(remarkGfm)
-          .use(remarkCard) // 自定义卡片语法处理
+          // .use(remarkCard) // 自定义卡片语法处理
+          .use(remarkPlugins)
           .use(remarkRehype, { allowDangerousHtml: true })
           // .use(rehypeRaw)
           // .use(rehypeStringify)
 
           // .use(rehypeParse, { fragment: true })
-          .use(rehypeCard) // 调整 HTML 结构
+          // .use(rehypeCard) // 调整 HTML 结构
           .use(rehypeReact, {
             ...production,
             components: {
