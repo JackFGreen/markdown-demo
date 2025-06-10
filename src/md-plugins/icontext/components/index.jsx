@@ -1,12 +1,12 @@
 import './index.css'
 
 function IconText(props) {
-  const { icon, title } = props
+  const { icon, text } = props
 
   return (
     <div className='icon-text'>
       <img src={icon} />
-      <span>{title}</span>
+      <span>{text}</span>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import './App.css'
-import useMarkdown from './hooks/useMarkdown'
+import useMarkdown from './md-plugins/hooks/useMarkdown'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -19,23 +19,22 @@ const data = [
   `
 - level 1
   
-  :::icontext{title="123" icon="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg"}
-  :::
+  ::icontext{text="123" icon="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg"}
 
   - li
+
   - render from ${'`<'}img${'/>`'} <img width="50" src="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg" />`,
 
   `
 - level 1
-  ::::card{title="123" icon="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg"}
+  :::card{text="123" icon="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg"}
 
-  :::icontext{title="123" icon="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg"}
-  :::
+  ::icontext{text="123" icon="https://assets-cdn.genstore.ai/web/ai-component/static/807ffc2f-5817-444a-89c7-a1aa7ce89d26/Genius.jpg"}
 
   - li
   - li
 
-  ::::\n`,
+  :::\n`,
 ].join('')
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))

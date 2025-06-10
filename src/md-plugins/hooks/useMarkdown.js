@@ -1,14 +1,15 @@
 import { Fragment, createElement, useEffect, useState } from 'react'
 import production from 'react/jsx-runtime'
-import rehypeReact from 'rehype-react'
+
 import { unified } from 'unified'
-import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkDirective from 'remark-directive'
+import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import rehypeRaw from 'rehype-raw'
+import rehypeReact from 'rehype-react'
 
-import { remarkPlugins, Card, IconText } from '../md-plugins'
+import { remarkPlugins, Card, IconText } from '..'
 
 function useMarkdown(text) {
   const [content, setContent] = useState(createElement(Fragment))
